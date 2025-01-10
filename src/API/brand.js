@@ -1,0 +1,21 @@
+const API = 'http://localhost:5010/api/brands'
+
+export const getBrands = async () => {
+
+    try {
+
+        const res = await fetch(`${API}/getBrands`, {
+            method : 'GET', credentials : 'include', headers: { 'Content-Type': 'application/json', }
+        });
+
+        const data = await res.json();
+
+        if(!res.ok) throw new Error(data.message);
+
+        return { status : true, data }
+         
+    } catch (err) {
+        return { status : false, message : err.message }
+    }
+
+}
