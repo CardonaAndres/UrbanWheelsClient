@@ -1,10 +1,10 @@
-const API = 'http://localhost:5010/api/brands'
+import { API_BASE_URL } from '../assets/js/config.js';
 
 export const getBrands = async () => {
 
     try {
 
-        const res = await fetch(`${API}/getBrands`, {
+        const res = await fetch(`${API_BASE_URL}/brands/getBrands`, {
             method : 'GET', credentials : 'include', headers: { 'Content-Type': 'application/json', }
         });
 

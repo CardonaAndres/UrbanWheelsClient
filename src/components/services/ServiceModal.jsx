@@ -13,11 +13,11 @@ export const ServiceModal = ({ open, onClose, serviceData = {} }) => {
 
     return (
         <Modal open={open} onClose={onClose}>
-        <Box sx={modalStyles}>
-            <ServiceForm onClose={onClose} serviceData={data} />
-        </Box>
+            <Box sx={modalStyles}>
+                <ServiceForm onClose={onClose} serviceData={data} />
+            </Box>
       </Modal>
-      )
+    )
 
 
 }

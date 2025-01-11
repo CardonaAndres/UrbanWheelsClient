@@ -13,8 +13,9 @@ import { Services } from "./pages/services/Services";
 import { routes } from "./assets/js/config.js";
 import { CarService } from "./pages/services/CarService.jsx";
 import "./assets/css/index.css";
+import { TypeDocsManagement } from "./pages/users/adminOptions/TypeDocsManagement.jsx";
 
-function App() {
+export const App = () => {
 
   return (
     <AuthProvider>
@@ -42,6 +43,7 @@ function App() {
                    <Route path={routes.cars} element={ <Cars /> } />
                    <Route path={routes.services} element={ <Services /> } />
                    <Route path={routes.carServiceAdminMode} element={ <CarService />} />
+                   <Route path={routes.typeDocs} element={ <TypeDocsManagement /> } />
                    
                </Route>
 
@@ -55,4 +57,3 @@ function App() {
   )
 }
 
-export default App

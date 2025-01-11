@@ -8,7 +8,6 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { RedIcon } from '../../../assets/js/menuStyles.js';
 import { routes } from '../../../assets/js/config.js';
 
-
 export  const AdminOptions = () =>  {
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -28,7 +27,7 @@ export  const AdminOptions = () =>  {
             <RedIcon>
               <AccountCircleIcon /> 
             </RedIcon>
-            Gestion De Usuarios
+            Usuarios
           </MenuItem>
         </Link>
 

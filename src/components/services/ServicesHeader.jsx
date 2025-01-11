@@ -14,15 +14,17 @@ export const ServicesHeader = ({ totalServices = 0 }) => {
         <div className="text-2xl font-bold text-gray-800">Nuestros Servicios</div>
 
         <div className="flex items-center space-x-4">
-        <span className="text-lg font-medium text-gray-600">
-            Total servicios: <span className="text-red-600 font-semibold"> {totalServices} </span>
-        </span>
+          <Button  variant="contained" color='error' onClick={handleOpen}>
+              Crear Servicio
+          </Button>
+          <span className="text-lg font-medium text-gray-600">
+              |
+          </span>
+          <span className="text-lg font-medium text-gray-600">
+              Total servicios: <span className="text-red-600 font-semibold"> {totalServices} </span>
+          </span>
 
-        <Button  variant="contained" color='error' onClick={handleOpen}>
-            Crear Servicio
-        </Button>
-
-        <ServiceModal open={modalOpen} onClose={handleClose} />
+          <ServiceModal open={modalOpen} onClose={handleClose} />
         </div>
   </div>
   )

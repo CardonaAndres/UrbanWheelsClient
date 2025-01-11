@@ -1,10 +1,10 @@
-const API = 'http://localhost:5010/api/carServices';
+import { API_BASE_URL } from '../assets/js/config.js';
 
 export const getAllCarServices = async car_ID => {
 
     try {
 
-        const res = await fetch(`${API}/car_services/${car_ID}`,{
+        const res = await fetch(`${API_BASE_URL}/carServices/car_services/${car_ID}`,{
             method : 'GET', credentials : 'include'
         });
 
@@ -23,7 +23,7 @@ export const getAllCarServices = async car_ID => {
 export const addCarService = async dataService => {
     try {
 
-        const res = await fetch(`${API}/car_service`,{
+        const res = await fetch(`${API_BASE_URL}/carServices/car_service`,{
             method : 'POST', credentials : 'include', 
             headers : { 'Content-Type': 'application/json'},
             body : JSON.stringify(dataService)
@@ -45,7 +45,8 @@ export const updateCarService = async newDataService => {
 
         console.log(newDataService);
 
-        const res = await fetch(`${API}/car_service/${newDataService.car_service_ID}`,{
+        const res = await fetch(
+            `${API_BASE_URL}/carServices/car_service/${newDataService.car_service_ID}`,{
             method : 'PUT', credentials : 'include', 
             headers : { 'Content-Type': 'application/json'},
             body : JSON.stringify(newDataService)
@@ -65,7 +66,7 @@ export const updateCarService = async newDataService => {
 export const deleteCarService = async carServiceID => {
     try {
 
-        const res = await fetch(`${API}/car_service/${carServiceID}`,{
+        const res = await fetch(`${API_BASE_URL}/carServices/car_service/${carServiceID}`,{
             method : 'DELETE', credentials : 'include', headers : { 'Content-Type': 'application/json'}
         });
 

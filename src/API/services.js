@@ -1,10 +1,10 @@
-const API = 'http://localhost:5010/api/services'
+import { API_BASE_URL } from '../assets/js/config.js';
 
 export const getServices = async () => {
 
     try {
 
-        const res = await fetch(`${API}/services`,{
+        const res = await fetch(`${API_BASE_URL}/services/services`,{
             method : 'GET', credentials : 'include'
         });
 
@@ -24,7 +24,7 @@ export const deleteService = async serviceID => {
 
     try {
 
-        const res = await fetch(`${API}/service/${serviceID}`,{
+        const res = await fetch(`${API_BASE_URL}/services/service/${serviceID}`,{
             method : 'DELETE', credentials : 'include', headers: { 'Content-Type': 'application/json', }
         });
 
@@ -44,7 +44,7 @@ export const createService = async serviceData => {
 
     try {
 
-        const res = await fetch(`${API}/service`,{ 
+        const res = await fetch(`${API_BASE_URL}/services/service`,{ 
             method : 'POST', headers: { 'Content-Type': 'application/json', }, 
             credentials : 'include', body : JSON.stringify(serviceData)
         });
@@ -65,7 +65,7 @@ export const updateService = async serviceData => {
 
     try {
 
-        const res = await fetch(`${API}/service/${serviceData.service_ID}`,{
+        const res = await fetch(`${API_BASE_URL}/services/service/${serviceData.service_ID}`,{
             method : 'PUT', headers: { 'Content-Type': 'application/json', }, 
             credentials : 'include', body : JSON.stringify(serviceData)
         });

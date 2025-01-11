@@ -1,4 +1,4 @@
-const API = 'http://localhost:5010/api/cars';
+import { API_BASE_URL } from '../assets/js/config.js';
 
 export const createCar = async carData => {
 
@@ -19,7 +19,7 @@ export const createCar = async carData => {
             formData.append('car_type_ID', carData.car_type_ID);
             formData.append('status_ID', carData.status_ID);
 
-        const res = await fetch(`${API}/car`,{
+        const res = await fetch(`${API_BASE_URL}/cars/car`,{
             method : 'POST', 
             credentials : 'include', 
             body : formData
@@ -56,7 +56,7 @@ export const updatedCar = async carData => {
             formData.append('car_type_ID', carData.car_type_ID);
             formData.append('status_ID', carData.status_ID);
 
-        const res = await fetch(`${API}/car/${carData.car_ID}`,{
+        const res = await fetch(`${API_BASE_URL}/cars/car/${carData.car_ID}`,{
             method : 'PUT', credentials : 'include', body : formData
         });
 
@@ -77,7 +77,7 @@ export const getCar = async idCar => {
 
 export const getCarByPlate = async plate => {
     try {
-        const res = await fetch(`${API}/carByPlate/${plate}`,{
+        const res = await fetch(`${API_BASE_URL}/cars/carByPlate/${plate}`,{
             method : 'GET', credentials : 'include'
         });
 
@@ -96,7 +96,7 @@ export const getAllCars = async page => {
 
     try {
 
-        const res = await fetch(`${API}/cars?pages=${page}`,{
+        const res = await fetch(`${API_BASE_URL}/cars/cars?pages=${page}`,{
             method : 'GET', credentials : 'include', headers: { 'Content-Type': 'application/json'}
         });
 
@@ -117,7 +117,7 @@ export const deleteCar = async idCar => {
 
     try {
 
-        const res = await fetch(`${API}/car/${idCar}`, {
+        const res = await fetch(`${API_BASE_URL}/cars/car/${idCar}`, {
             method : 'DELETE', credentials : 'include', headers: { 'Content-Type': 'application/json'}
         });
 

@@ -1,10 +1,10 @@
-const API = `http://localhost:5010/api/auth`;
+import { API_BASE_URL } from '../assets/js/config.js';
 
 export const login = async (user) => {
 
     try {
 
-        const res = await fetch(`${API}/login`, { method: 'POST',  
+        const res = await fetch(`${API_BASE_URL}/auth/login`, { method: 'POST',  
             headers: { 'Content-Type': 'application/json', },  
             body: JSON.stringify(user), credentials: 'include'
         });
@@ -28,7 +28,7 @@ export const register = async (user) => {
 
     try {
 
-        const res = await fetch(`${API}/register`, { 
+        const res = await fetch(`${API_BASE_URL}/auth/register`, { 
             method: 'POST', 
             headers: { 'Content-Type': 'application/json', },
             body: JSON.stringify(user)
@@ -51,7 +51,7 @@ export const register = async (user) => {
 export const logout = async () => {
 
     try {
-        const res = await fetch(`${API}/logout`, {
+        const res = await fetch(`${API_BASE_URL}/auth/logout`, {
             method : 'POST', credentials : 'include',
         });
 
@@ -70,7 +70,7 @@ export const verifyToken = async () => {
 
     try {
 
-        const res = await fetch(`${API}/verifyToken`, { 
+        const res = await fetch(`${API_BASE_URL}/auth/verifyToken`, { 
               credentials : 'include', method : 'GET', headers: { 'Content-Type': 'application/json', }
         });
 

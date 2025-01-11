@@ -1,3 +1,5 @@
+export const API_BASE_URL = 'http://localhost:5010/API';
+
 export const routes = {
     home: '/', 
     login : '/login',
@@ -9,8 +11,9 @@ export const routes = {
     cars : '/Cars',
     services : '/Services',
     carService : '/CarService',
-    carServiceAdminMode : '/CarServiceAdminMode'
-  };
+    carServiceAdminMode : '/CarServiceAdminMode',
+    typeDocs : '/TypeDocs',
+};
   
 export const formatKilometers = km => {
     return new Intl.NumberFormat('es-CO', {

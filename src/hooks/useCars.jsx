@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getAllCars, deleteCar, getCarByPlate, createCar, updatedCar } from '../API/car.js';
 import { useDataCar } from './useDataCar.jsx';
-import { errorAlert, confirmAlert, successAlert } from '../components/common/Alerts';
+import { errorAlert, confirmAlert, successAlert } from '../components/common/Alerts.jsx';
 
 export const useCar = () => {
   const [cars, setCars] = useState([]);
